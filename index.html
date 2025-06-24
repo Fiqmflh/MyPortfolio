@@ -4,682 +4,403 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portofolio | Syafiq</title>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="aos/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
-
+  <link rel="stylesheet" href="style.css"/>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-<style>
-  /* === RESET DAN DASAR === */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    background: #121212;
-    color: #f1f1f1;
-  }
-
-/* === NAVBAR UMUM === */
-nav {
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-}
-
-nav .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #00fff7;
-}
-
-nav .hamburger {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #00fff7;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* NAV MENU MOBILE */
-nav ul {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
-  position: fixed;
-  top: 60px;
-  right: 0;
-  width: 220px;
-  height: calc(100% - 60px);
-  padding: 2rem 1.5rem;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-  border-radius: 0 0 0 10px;
-  z-index: 9998;
-}
-
-
-nav ul li {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-nav ul li a {
-  color: #f1f1f1;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.1rem;
-  width: 100%;
-  display: block;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  box-shadow: none !important;
-  filter: none !important;
-  backdrop-filter: none !important;
-  text-shadow: none !important;
-  background: black;
-  transition: background-color 0.3s ease;
-  text-decoration: none !important;
-
-}
-
-nav ul li a:hover {
-    color: #00fff7;
-}
-
-/* NAV MENU DESKTOP */
-@media screen and (min-width: 769px) {
-  nav {
-    padding: 1rem 3rem;
-  }
-  
-  nav .hamburger {
-    display: none;
-  }
-
-  nav ul {
-    position: static;
-    flex-direction: row;
-    height: auto;
-    width: auto;
-    background: none;
-    padding: 0;
-    box-shadow: none;
-    transform: none;
-    border-radius: 0;
-    align-items: center;
-    gap: 2.5rem;
-  }
-
-  nav ul li a {
-    font-size: 1rem;
-    padding: 0;
-  }
-
-  nav ul li img,
-nav ul li svg {
-  display: none;
-}
-
-/* Jarak antar menu item */
-nav ul {
-  gap: 1rem;
-}
-}
-
-
-  /* === KONTEN UTAMA === */
-  main {
-    padding: 80px 20px 40px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    margin-bottom: 1rem;
-  }
-
-  p {
-    margin-bottom: 1.2rem;
-    line-height: 1.5;
-  }
-
-  /* === SKILL BAR === */
-  .skill-bar {
-    background-color: #ddd;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 10px;
-  }
-
-  .skill-level {
-    height: 100%;
-    width: 0%;
-    transition: width 2s ease-in-out;
-    background-color: #00fff7;
-  }
-
-/* === SECTION CONTACT === */
-#contact {
-  transform: scale(1.15);
-  transform-origin: top;
-  padding: 2rem 1rem;
-}
-
-#contact .social-media {
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-#contact .social-media h3 {
-  font-size: 28px;
-  margin-bottom: 1.5rem;
-  color: #00fff7;
-}
-
-#contact .social-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-#contact .social-links a {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  color: #f1f1f1;
-  text-decoration: none;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  background-color: #1a1a1a;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  width: 100%;
-  max-width: 250px;
-  justify-content: center;
-}
-
-#contact .social-links a i {
-  font-size: 22px;
-  margin-right: 10px;
-}
-
-#contact .social-links a:hover {
-  background-color: #00fff7;
-  color: #121212;
-}
-
-#contact .social-links a:hover i {
-  color: #121212;
-}
-
-/* RESPONSIVE: Di atas 600px → jadi horizontal */
-@media (min-width: 600px) {
-  #contact .social-links {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  #contact .social-links a {
-    max-width: none;
-    width: auto;
-  }
-}
-</style>
 
 </head>
 <body>
 
-    <nav>
+  <nav>
     <div class="logo">Fiqmflh Portfolio</div>
     <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
     <ul id="nav-menu">
-        <li><a href="#about" class="nav-link"></h2>ABOUT</h2></a></li>
-        <li><a href="#portfolio" class="nav-link"></h2>PROJECTS</h2></a></li>
-        <li><a href="#sertif" class="nav-link"></h2>CERTIFICATE</h2></a></li>
-        <li><a href="#contact" class="nav-link"></h2>CONTACT</h2></a></li>
+      <li><a href="#about" class="nav-link">ABOUT</a></li>
+      <li><a href="#portfolio" class="nav-link">PROJECTS</a></li>
+      <li><a href="#sertif" class="nav-link">CERTIFICATE</a></li>
+      <li><a href="#contact" class="nav-link">CONTACT</a></li>
     </ul>
-    </nav>
+  </nav>
 
-<section class="hero">
+  <section class="hero">
     <div class="hero-content">
-        <div class="hero-text">
-            <h1>Hello, I'm</h1>
-            <div class="cursor"><h1>M Muflih Syafiq</h1></div>
-            <p>ASSOCIATE DEGREE STUDENT</p>
-            <h3 style="color: #00fff7; margin-bottom: 27px; font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic;">
-                "Always try and never force what we can't do, but always do our best when we can."
-            </h3>
-
-            <!-- Tambahkan wrapper flex untuk teks dan tombol -->
-            <div class="text-button-row" data-aos="fade-down" data-aos-delay="300">
-                <a href="gambar/CVSYAFIQ.pdf" download class="glowing-cv-button">
-                    Curriculum Vitae
-                </a>
-            </div>
+      <div class="hero-text">
+        <h1>Hello, I'm</h1>
+        <div class="cursor"><h1>M Muflih Syafiq</h1></div>
+        <p>ASSOCIATE DEGREE STUDENT</p>
+        <div class="quote">
+          "Always try and never force what we can't do, but always do our best when we can."
         </div>
-
-        <div class="hero-image">
-            <img src="gambar/saya.png" alt="Muhammad Muflih Syafiq" />
+        <div class="text-button-row" data-aos="fade-down" data-aos-delay="300">
+          <a href="gambar/CVSYAFIQ.pdf" download class="glowing-cv-button">
+            Curriculum Vitae
+          </a>
         </div>
+      </div>
+      <div class="hero-image">
+        <img src="gambar/saya.png" alt="Muhammad Muflih Syafiq" />
+      </div>
     </div>
-</section>
+  </section>
 
-
-  <section id="about" class="content-section" data-aos="fade-up">
-
-    <h2 style="color: #00fff7;">About Me</h2>
-
-    <p> As an enthusiastic learner in the Information Systems Associate Degree program at Politeknik Negeri Subang, I've already taken the initiative to apply my skills by developing a web-based information system for three UMKM (Small and Medium-sized Enterprises). This project is designed to help institutions modernize their information dissemination, improving efficiency and accessibility. My aim is to contribute to the digital transformation of workflows and enhance public service delivery through technology. 
-      I believe this solution has significant potential for broader application across various organizations, both public and private, addressing the increasing need for reliable information systems in our digital world.
-    </p>
+  <main>
+    <section id="about" class="content-section" data-aos="fade-up">
+      <h2 style="color: #00fff7;">About Me</h2>
+      <p> 
+        As an enthusiastic learner in the Information Systems Associate Degree program at Politeknik Negeri Subang, 
+        I've already taken the initiative to apply my skills by developing a web-based information system for three UMKM 
+        (Small and Medium-sized Enterprises). This project is designed to help institutions modernize their information dissemination, 
+        improving efficiency and accessibility. My aim is to contribute to the digital transformation of workflows and enhance 
+        public service delivery through technology. I believe this solution has significant potential for broader application across 
+        various organizations, both public and private, addressing the increasing need for reliable information systems in our digital world.
+      </p>
     </section>
-   <section class="skills" data-aos="fade-up">
-    <h3 style="text-align: center;">My Skills</h3>
-    <div class="skills-grid">
-        <!-- Baris 1 -->
-        <div class="skill-item" data-aos="fade-up">
-            <div class="skill-icon">
-                <i class="fab fa-html5"></i>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="background: linear-gradient(70deg, #e34f26, #492318);" data-percent="77%"></div>
-            </div>
-        </div>
-        
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-icon">
-                <i class="fab fa-css3-alt"></i>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="background: linear-gradient(70deg, #1572b6, #0b3350);" data-percent="71%"></div>
-            </div>
-        </div>
-        
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-icon">
-                <i class="fab fa-js"></i>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="background: linear-gradient(70deg, #f7df1e, #524a12);" data-percent="58%"></div>
-            </div>
-        </div>
-        
-        <!-- Baris 2 -->
-        <div class="skill-item" data-aos="fade-up">
-            <div class="skill-icon">
-                <i class="fab fa-php"></i>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="background: linear-gradient(70deg, #777bb3, #2d2f48);" data-percent="67%"></div>
-            </div>
-        </div>
-        
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-icon">
-                <i class="fa-solid fa-database"></i>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="background: linear-gradient(70deg, #00fff7, #1b3736);" data-percent="72%"></div>
-            </div>
-        </div>
-        
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-icon">
-                <i class="fas fa-file-excel"></i>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="background: linear-gradient(70deg, #217346, #0f3520);" data-percent="78%"></div>
-            </div>
-        </div>
-
-        <!-- Baris 3 -->
-        <div class="skill-item" data-aos="fade-up">
-            <div class="skill-icon">
-                <i class="fab fa-laravel"></i>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="background: linear-gradient(70deg, #ff2d20, #63211e);" data-percent="64%"></div>
-            </div>
-        </div>
-        
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-icon">
-                <i class="fa-brands fa-react"></i>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="background: linear-gradient(70deg, #61dafb, #192e33);" data-percent="20%"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="portfolio" class="content-section" data-aos="zoom-in">
-    <h2 style="color: #00fff7;">Projects</h2>
     
-    <!-- Bagian Projek 1 -->
-    <div class="project-section">
-        <div class="grid">
-            <div class="project-item" data-aos="fade-up">
-                <a href="gambar/projek1.png" target="_blank" class="image-link">
-                    <img src="gambar/projek1.png" class="project-img" alt="VBA EXCEL">
-                </a>
-                <button class="detail-icon" onclick="showDetails('VBA EXCEL', 'A system using VBA Excel created to automate data processing processes. This project includes the creation of macros, user forms, and interactive dashboards to facilitate data analysis.')">
-                    <i class="fas fa-ellipsis-h"></i>
-                </button>
-                <p>VBA EXCEL</p>
-            </div>
-            <div class="project-item" data-aos="fade-up">
-                <a href="gambar/jafa.png" target="_blank" class="image-link">
-                    <img src="gambar/jafa.png" class="project-img" alt="PENCATATAN PESANAN">
-                </a>
-                <button class="detail-icon" onclick="showDetails('SALES RECORDING', 'Recording through input in excel is more interesting and easy to understand with an attractive design, there is another dashboard to analyze sales.')">
-                    <i class="fas fa-ellipsis-h"></i>
-                </button>
-                <p>SALES RECORDING</p>
-            </div>
+    <section class="skills" data-aos="fade-up">
+      <h3>My Skills</h3>
+      <div class="skills-grid">
+        <!-- Technical Skills -->
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <div class="skill-name">HTML</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="background: linear-gradient(70deg, #e34f26, #492318);" data-percent="77%"></div>
+          </div>
+          <div class="skill-percent">77%</div>
         </div>
-    </div>
-
-            <div class="project-section">
-        <div class="grid">
-            <div class="project-item" data-aos="fade-up">
-                <a href="gambar/gosir.png" target="_blank" class="image-link">
-                    <img src="gambar/grosir.png" class="project-img" alt="SISTEM GROSIR">
-                </a>
-                <button class="detail-icon" onclick="showDetails('GROCERY SYSTEM', 'A web-based management and information system for a Wholesale Store that can perform transactions from the system.')">
-                    <i class="fas fa-ellipsis-h"></i>
-                </button>
-                <p>GROCERY SYSTEM</p>
-            </div>
-            <div class="project-item" data-aos="fade-up">
-                <a href="gambar/admin.png" target="_blank" class="image-link">
-                    <img src="gambar/admin.png" class="project-img" alt="MANAJEMEN PESANAN">
-                </a>
-                <button class="detail-icon" onclick="showDetails('SALES MANAGEMENT', 'A system for managing orders made by customers by setting a payment and shipping status by the admin.')">
-                    <i class="fas fa-ellipsis-h"></i>
-                </button>
-                <p>SALES MANAGEMENT</p>
-            </div>
+        
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <div class="skill-name">CSS</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="background: linear-gradient(70deg, #1572b6, #0b3350);" data-percent="71%"></div>
+          </div>
+          <div class="skill-percent">71%</div>
         </div>
-    </div>
+        
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-js"></i>
+          </div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="background: linear-gradient(70deg, #f7df1e, #524a12);" data-percent="58%"></div>
+          </div>
+          <div class="skill-percent">48%</div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <div class="skill-name">MySQL</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="background: linear-gradient(70deg, #00fff7, #1b3736);" data-percent="72%"></div>
+          </div>
+          <div class="skill-percent">82%</div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fab fa-laravel"></i>
+          </div>
+          <div class="skill-name">Laravel</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="background: linear-gradient(70deg, #ff2d20, #63211e);" data-percent="64%"></div>
+          </div>
+          <div class="skill-percent">84%</div>
+        </div>
+        
+        <!-- Soft Skills -->
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-flag"></i>
+          </div>
+          <div class="skill-name">Leadership</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="background: linear-gradient(70deg, #4CAF50, #2E7D32);" data-percent="85%"></div>
+          </div>
+          <div class="skill-percent">85%</div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <div class="skill-name">Management</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="background: linear-gradient(70deg, #2196F3, #0D47A1);" data-percent="80%"></div>
+          </div>
+          <div class="skill-percent">80%</div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="skill-name">Communication</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="background: linear-gradient(70deg, #FF9800, #E65100);" data-percent="78%"></div>
+          </div>
+          <div class="skill-percent">88%</div>
+        </div>
+      </div>
+    </section>
     
-    <!-- Bagian Projek 2 -->
-    <div class="project-section">
-        <div class="grid">
-            <div class="project-item" data-aos="fade-up">
-                <a href="gambar/projek2.png" target="_blank" class="image-link">
-                    <img src="gambar/projek2.png" class="project-img" alt="BERANDA WEB">
-                </a>
-                <button class="detail-icon" onclick="showDetails('INFORMATION WEB', 'A website that provides actual information about a business, with several information pages and registration features.')">
-                    <i class="fas fa-ellipsis-h"></i>
-                </button>
-                <p>INFORMATION WEB</p>
+    <section id="portfolio" class="content-section" data-aos="zoom-in">
+      <h2 style="color: #00fff7;">Projects</h2>
+      
+      <div class="projects-container">
+        <div class="project-item" data-aos="fade-up">
+          <a href="gambar/projek1.png" target="_blank" class="image-link">
+            <img src="gambar/projek1.png" class="project-img" alt="VBA EXCEL">
+          </a>
+          <button class="detail-icon" onclick="showDetails('VBA EXCEL', 'A system using VBA Excel created to automate data processing processes. This project includes the creation of macros, user forms, and interactive dashboards to facilitate data analysis.')">
+            <i class="fas fa-ellipsis-h"></i>
+          </button>
+          <div class="project-content">
+            <div class="project-title">VBA EXCEL</div>
+            <div class="tech-stack">
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#00ff00 0% 100%);"><span>100%</span></div>
+                <div class="tech-label">VBA</div>
+              </div>
             </div>
-            <div class="project-item" data-aos="fade-up">
-                <a href="gambar/kasir.png" target="_blank" class="image-link">
-                    <img src="gambar/kasir.png" class="project-img" alt="SISTEM KASIR">
-                </a>
-                <button class="detail-icon" onclick="showDetails('CHASIER SYSTEM', 'The Cashier System uses the Laravel framework to record transactions and create daily to annual sales reports, not only the cashier but also overall management.')">
-                    <i class="fas fa-ellipsis-h"></i>
-                </button>
-                <p>CASHIER SYSTEM</p>
-            </div>
+          </div>
         </div>
-    </div>
-</section>
-
-<!-- Detail Project -->
-<div id="projectDetails" class="details-container">
-    <div class="details-content">
+        
+        <div class="project-item" data-aos="fade-up">
+          <a href="gambar/jafa.png" target="_blank" class="image-link">
+            <img src="gambar/jafa.png" class="project-img" alt="SALES RECORDING">
+          </a>
+          <button class="detail-icon" onclick="showDetails('SALES RECORDING', 'Recording through input in excel is more interesting and easy to understand with an attractive design, there is another dashboard to analyze sales.')">
+            <i class="fas fa-ellipsis-h"></i>
+          </button>
+          <div class="project-content">
+            <div class="project-title">SALES RECORDING</div>
+            <div class="tech-stack">
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#00ff00 0% 100%);"><span>100%</span></div>
+                <div class="tech-label">Excel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-item" data-aos="fade-up">
+          <a href="gambar/grosir.png" target="_blank" class="image-link">
+            <img src="gambar/grosir.png" class="project-img" alt="GROCERY SYSTEM">
+          </a>
+          <button class="detail-icon" onclick="showDetails('GROCERY SYSTEM', 'A web-based management and information system for a Wholesale Store that can perform transactions from the system.')">
+            <i class="fas fa-ellipsis-h"></i>
+          </button>
+          <div class="project-content">
+            <div class="project-title">GROCERY SYSTEM</div>
+            <div class="tech-stack">
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#e34f26 0% 30%);"><span>30%</span></div>
+                <div class="tech-label">HTML</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#1572b6 0% 80%);"><span>80%</span></div>
+                <div class="tech-label">CSS</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#f7df1e 0% 40%);"><span>40%</span></div>
+                <div class="tech-label">JS</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#777bb3 0% 90%);"><span>90%</span></div>
+                <div class="tech-label">PHP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-item" data-aos="fade-up">
+          <a href="gambar/admin.png" target="_blank" class="image-link">
+            <img src="gambar/admin.png" class="project-img" alt="SALES MANAGEMENT">
+          </a>
+          <button class="detail-icon" onclick="showDetails('SALES MANAGEMENT', 'A system for managing orders made by customers by setting a payment and shipping status by the admin.')">
+            <i class="fas fa-ellipsis-h"></i>
+          </button>
+          <div class="project-content">
+            <div class="project-title">SALES MANAGEMENT</div>
+            <div class="tech-stack">
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#e34f26 0% 30%);"><span>30%</span></div>
+                <div class="tech-label">HTML</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#1572b6 0% 80%);"><span>80%</span></div>
+                <div class="tech-label">CSS</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#f7df1e 0% 40%);"><span>40%</span></div>
+                <div class="tech-label">JS</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#777bb3 0% 90%);"><span>90%</span></div>
+                <div class="tech-label">PHP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-item" data-aos="fade-up">
+          <a href="gambar/projek2.png" target="_blank" class="image-link">
+            <img src="gambar/projek2.png" class="project-img" alt="INFORMATION WEB">
+          </a>
+          <button class="detail-icon" onclick="showDetails('INFORMATION WEB', 'A website that provides actual information about a business, with several information pages and registration features.')">
+            <i class="fas fa-ellipsis-h"></i>
+          </button>
+          <div class="project-content">
+            <div class="project-title">INFORMATION WEB</div>
+            <div class="tech-stack">
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#e34f26 0% 79%);"><span>79%</span></div>
+                <div class="tech-label">HTML</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#1572b6 0% 97%);"><span>97%</span></div>
+                <div class="tech-label">CSS</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#f7df1e 0% 75%);"><span>75%</span></div>
+                <div class="tech-label">JS</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#777bb3 0% 85%);"><span>85%</span></div>
+                <div class="tech-label">PHP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-item" data-aos="fade-up">
+          <a href="gambar/kasir.png" target="_blank" class="image-link">
+            <img src="gambar/kasir.png" class="project-img" alt="CASHIER SYSTEM">
+          </a>
+          <button class="detail-icon" onclick="showDetails('CASHIER SYSTEM', 'The Cashier System uses the Laravel framework to record transactions and create daily to annual sales reports, not only the cashier but also overall management.')">
+            <i class="fas fa-ellipsis-h"></i>
+          </button>
+          <div class="project-content">
+            <div class="project-title">CASHIER SYSTEM</div>
+            <div class="tech-stack">
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#e34f26 0% 79%);"><span>79%</span></div>
+                <div class="tech-label">HTML</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#1572b6 0% 97%);"><span>97%</span></div>
+                <div class="tech-label">CSS</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#f7df1e 0% 75%);"><span>75%</span></div>
+                <div class="tech-label">JS</div>
+              </div>
+              <div class="tech-item">
+                <div class="pie-chart" style="background: conic-gradient(#777bb3 0% 85%);"><span>85%</span></div>
+                <div class="tech-label">PHP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Detail Project -->
+    <div id="projectDetails" class="details-container">
+      <div class="details-content">
         <span class="close-btn" onclick="hideDetails()">&times;</span>
         <h2 id="detailsTitle"></h2>
         <p id="detailsDescription"></p>
+      </div>
     </div>
-</div>
-
-<section id="sertif" class="content-section" data-aos="fade-up">
-    <h2 style="color: #00fff7;">My Experience</h2>
     
-    
-    <div class="certificate-grid">
-        <!-- Tampilan awal (3 pertama) -->
-        <div class="certificate-item initial-show" data-aos="zoom-in">
+    <section id="sertif" class="content-section" data-aos="fade-up">
+      <h2 style="color: #00fff7;">My Experience</h2>
+      
+      <div class="certificate-container">
+        <div class="certificate-grid" id="certGrid">
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/certiport.png" alt="Sertifikat 1">
-        </div>
-        <div class="certificate-item initial-show" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif10.jpg" alt="Sertifikat 2">
-        </div>
-        <div class="certificate-item initial-show" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif5.jpg" alt="Sertifikat 3">
-        </div>
-        <div class="certificate-item hidden-show" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif1.jpg" alt="Sertifikat 4">
-        </div>
-        
-        <!-- Sertifikat lainnya (hidden awal) -->
-        <div class="certificate-item hidden-cert" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif7.jpg" alt="Sertifikat 5">
-        </div>
-        <div class="certificate-item hidden-cert" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif6.jpg" alt="Sertifikat 6">
-        </div>
-        <div class="certificate-item hidden-cert" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif11.jpg" alt="Sertifikat 7">
-        </div>
-        <div class="certificate-item hidden-cert" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif8.jpg" alt="Sertifikat 8">
-        </div>
-        <div class="certificate-item hidden-cert" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif9.jpg" alt="Sertifikat 9">
-        </div>
-        <div class="certificate-item hidden-cert" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif3.jpg" alt="Sertifikat 10">
-        </div>
-        <div class="certificate-item hidden-cert" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif2.jpg" alt="Sertifikat 11">
-        </div>
-        <div class="certificate-item hidden-cert" data-aos="zoom-in">
+          </div>
+          <div class="certificate-item" data-aos="zoom-in">
             <img src="gambar/sertif4.jpg" alt="Sertifikat 12">
+          </div>
         </div>
-    </div>
 
-    <div class="toggle-certificates">
-        <div class="arrow-icon">
+        <div class="toggle-certificates" id="toggleCerts">
+          <span>Show All Certificates</span>
+          <div class="arrow-icon">
             <i class="fas fa-chevron-down"></i>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
+    
+    <section id="contact" class="content-section" data-aos="fade-left">
+      <div class="social-media">
+        <h3>Connect with me</h3>
+        <div class="social-links">
+          <a href="https://instagram.com/fiqmflh_" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://wa.me/6281229144427" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/muhammad-muflih-syafiq-a3827b34b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-
-<section id="contact" class="content-section" data-aos="fade-left" style="transform: scale(1.15); transform-origin: top;">
-  <div class="social-media">
-    <h3 style="font-size: 28px;">Connect with me</h3>
-    <div class="social-links" style="font-size: 20px;">
-      <a href="https://instagram.com/fiqmflh_" target="_blank" rel="noopener" aria-label="Instagram">
-        <i class="fab fa-instagram" style="font-size: 24px; margin-right:2px;"></i>
-      </a><br>
-      <a href="https://wa.me/6281229144427" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp" style="font-size: 24px; margin-right: 2px;"></i>
-      </a><br>
-      <a href="https://www.linkedin.com/in/muhammad-muflih-syafiq-a3827b34b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in" style="font-size: 24px; margin-right: 2px;"></i>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
-  <footer data-aos="fade-up">
-    <p>&copy; 2025 Portfolio Muflih Syafiq</p>
+  <footer data-aos="fade-up" style="text-align: center; margin-top: 50px;">
+  <p style="display: inline-block; font-family: sans-serif;">&copy; 2025 Portfolio Muflih Syafiq</p>
   </footer>
-
-  <script src="aos/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-
-    // Smooth scroll for nav
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
-
-  <script>
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-  });
-
-  // Close menu when click nav link (mobile)
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-      }
-    });
-  });
-
-    function openModal(title, description) {
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('modalDescription').textContent = description;
-            document.getElementById('projectModal').style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Mencegah scroll saat modal terbuka
-        }
-        
-        // Fungsi untuk menampilkan detail
-        function showDetails(title, description) {
-            document.getElementById('detailsTitle').textContent = title;
-            document.getElementById('detailsDescription').textContent = description;
-            document.getElementById('projectDetails').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-        
-        // Fungsi untuk menyembunyikan detail
-        function hideDetails() {
-            document.getElementById('projectDetails').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Tutup detail jika mengklik di luar konten
-        window.onclick = function(event) {
-            const details = document.getElementById('projectDetails');
-            if (event.target == details) {
-                hideDetails();
-            }
-        }
-        
-        // Tutup detail dengan tombol ESC
-        document.onkeydown = function(event) {
-            if (event.key === "Escape") {
-                hideDetails();
-            }
-        };
-
-     document.querySelector('.toggle-certificates').addEventListener('click', function() {
-        const grid = document.querySelector('.certificate-grid');
-        const arrow = document.querySelector('.arrow-icon');
-        const toggleText = this.querySelector('span');
-        
-        grid.classList.toggle('expanded');
-        arrow.classList.toggle('rotate');
-        
-        if (grid.classList.contains('expanded')) {
-            toggleText.textContent = 'Hide Certificates';
-            // Trigger AOS untuk sertifikat yang baru ditampilkan
-            document.querySelectorAll('.hidden-cert').forEach(item => {
-                item.style.opacity = 0;
-                setTimeout(() => {
-                    AOS.refreshHard();
-                    item.style.opacity = 1;
-                }, 50);
-            });
-        } else {
-            toggleText.textContent = 'Show All Certificates';
-        }
-    });
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const skillLevels = document.querySelectorAll(".skill-level");
-
-        const animateSkills = () => {
-            skillLevels.forEach(skill => {
-                const targetPercent = skill.getAttribute("data-percent");
-                skill.style.width = targetPercent;
-            });
-        };
-
-        // Jika pakai AOS, bisa tunggu sampai elemen visible
-        AOS.init({
-            once: true,
-            duration: 1000
-        });
-
-        // Tambahkan delay agar animasi terjadi saat muncul
-        setTimeout(animateSkills, 500);
-    });
-</script>
-
-
+  <script src="script.js"></script>
 
 
 </body>
